@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word Search BD</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1 id="title">Word Search BD</h1>
+  <p id="subtitle">Find the hidden words in the letter grid</p>
+</header>
+<main>
+  <section class="controls" aria-label="Game controls">
+    <div>
+      <label id="categoryLabel" for="catSel">Category</label>
+      <select id="catSel"></select>
+    </div>
+    <div>
+      <label id="diffLabel" for="diffSel">Difficulty</label>
+      <select id="diffSel">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+    <button id="newBtn" type="button">New puzzle</button>
+    <button id="hintBtn" type="button">Hint (3)</button>
+    <button id="langBtn" type="button">Bangla</button>
+  </section>
+
+  <section class="stats" aria-label="Scoreboard">
+    <div class="stat"><span class="lbl" id="scoreLabel">Score</span><span class="val" id="scoreVal">0</span></div>
+    <div class="stat"><span class="lbl" id="foundLabel">Found</span><span class="val" id="foundVal">0/0</span></div>
+    <div class="stat"><span class="lbl" id="timeLabel">Time</span><span class="val" id="timeVal">00:00</span></div>
+    <div class="stat"><span class="lbl" id="bestLabel">Best score</span><span class="val" id="bestVal">0</span></div>
+  </section>
+
+  <div class="layout">
+    <section id="gridWrap">
+      <div id="grid" role="grid" aria-label="Letter grid"></div>
+      <p id="dragHint">Drag across letters to select a word</p>
+      <p id="hintMsg" role="status"></p>
+    </section>
+    <aside>
+      <h2 id="wordsHeading">Words to find</h2>
+      <ul id="wordList"></ul>
+    </aside>
+  </div>
+
+  <section id="winBox" hidden>
+    <h2 id="winTitle">You found them all!</h2>
+    <p id="winText"></p>
+    <button id="againBtn" type="button">Play again</button>
+  </section>
+</main>
+<footer><p id="footerText">100% offline &mdash; no account, no network. Every puzzle places the words fresh.</p></footer>
+<script src="js/logic.js"></script>
+<script src="js/words.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
